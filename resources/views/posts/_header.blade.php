@@ -24,7 +24,8 @@
                                           hover:bg-blue-500 focus:bg-blue-500 hover:text-white focus:text-white 
                                           {{ isset($currentCategory) && $currentCategory->is($cate) ? 'bg-blue-500 text-white' : '' }}
                                           ">{{ ucwords($cate->name) }}</a> --}}
-                    @component('components.dropdown-item', ['href' => '?category=' . $cate->slug])
+                    @component('components.dropdown-item', ['href' => '?category=' . $cate->slug . '&' .
+                        http_build_query(request()->except('category'))])
                         @slot('active')
                             {{ isset($currentCategory) && $currentCategory->is($cate) ? 'bg-blue-500 text-white' : '' }}
                         @endslot
@@ -76,6 +77,9 @@
         <!-- Search -->
         <div class="relative flex lg:inline-flex items-center bg-gray-100 rounded-xl px-3 py-2">
             <form method="GET" action="#">
+                @if (request('category'))
+                    <input type="hidden" name="category" value="{{ request('category') }}">
+                @endif
                 <input type="text" name="search" placeholder="Find something"
                     class="bg-transparent placeholder-black font-semibold text-sm" value="{{ request('search') }}">
             </form>

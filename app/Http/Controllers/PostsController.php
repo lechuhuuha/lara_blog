@@ -10,18 +10,18 @@ class PostsController extends Controller
     public function index()
     {
         return view(
-            'posts',
+            'posts.index',
             [
-                'posts' => Post::latest()->filter(request(['search', 'category']))->get(),
-                'categories' => Category::latest()->get(),
-                'currentCategory'=>Category::where('slug',request('category'))->first()
+                'posts' => Post::latest()->filter(request(['search', 'category', 'author']))->get(),
+                'categories' => Category::all(),
+                'currentCategory' => Category::where('slug', request('category'))->first()
             ]
         );
     }
     public function show(Post $post)
     {
         return view(
-            'post',
+            'posts.show',
             ['post' => $post]
         );
     }

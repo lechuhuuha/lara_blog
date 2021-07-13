@@ -30,13 +30,13 @@ Route::get('posts/{post}', [PostsController::class, 'show'])->where('post', '[A-
 //     ]);
 // })->name('category');
 
-Route::get('authors/{author}', function (User $author) {
-    return view('posts', [
-        'posts' => $author->posts,
-        'categories' => Category::latest()->get()
+// Route::get('authors/{author}', function (User $author) {
+//     return view('posts.index', [
+//         'posts' => $author->posts,
+//         'categories' => Category::all()
 
-    ]);
-});
+//     ]);
+// });
 // Route::fallback(function () {
 //     return abort(404);
 // });
