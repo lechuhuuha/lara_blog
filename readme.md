@@ -1,3 +1,8 @@
+## Quick notes:
+So i watch a cousre on laracast https://laracasts.com/series/laravel-8-from-scratch/episodes/40 is about creatting a blog with laraval 8.0 but my company working on 5.8 and 7.0 so i made this with laravel 5.8 .
+If anybody want to do its with lara 5.8 then this is a solution for you guys
+
+
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
 <p align="center">
