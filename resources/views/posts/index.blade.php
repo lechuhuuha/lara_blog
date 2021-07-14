@@ -6,7 +6,7 @@
             @component('components.posts-grid', ['posts' => $posts])
 
             @endcomponent
-
+            {{ $posts->links() }}
         @else
             <p class="text-center">No post yet . Please check back later</p>
 
@@ -30,3 +30,13 @@
         </article>
     @endforeach --}}
 @endcomponent
+<style>
+    ul.pagination {
+        display: flex;
+        
+    }
+    ul.pagination li{
+        margin: 5px
+    }
+
+</style>

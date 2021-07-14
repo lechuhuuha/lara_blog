@@ -25,7 +25,7 @@
                                           {{ isset($currentCategory) && $currentCategory->is($cate) ? 'bg-blue-500 text-white' : '' }}
                                           ">{{ ucwords($cate->name) }}</a> --}}
                     @component('components.dropdown-item', ['href' => '?category=' . $cate->slug . '&' .
-                        http_build_query(request()->except('category'))])
+                        http_build_query(request()->except('category', 'page'))])
                         @slot('active')
                             {{ isset($currentCategory) && $currentCategory->is($cate) ? 'bg-blue-500 text-white' : '' }}
                         @endslot

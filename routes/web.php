@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Category;
 use App\Http\Controllers\PostsController;
+use App\Http\Controllers\RegisterController;
 use App\User;
 use App\Post;
 /*
@@ -20,6 +21,9 @@ Route::get('/', [PostsController::class, 'index'])->name('posts.show');
 
 Route::get('posts/{post}', [PostsController::class, 'show'])->where('post', '[A-z0-9_\-]+')->name('post.show');
 
+Route::get('register', [RegisterController::class, 'create']);
+
+Route::post('register', [RegisterController::class, 'store']);
 // Route::get('categories/{category}', function (Category $category) {
 //     // dd($category);
 //     return view('posts', [
